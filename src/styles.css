@@ -1,1 +1,288 @@
-/* You can add global styles to this file, and also import other style files */
+/* COMMON START */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.dark-bg {
+    background-color: #373738;
+}
+
+.light-bg {
+    background-color: #F6F7F8;
+}
+
+.page-body {
+    margin-top: -3em;
+}
+
+.text-horizontal-line {
+    overflow: hidden;
+    text-align: center;
+}
+
+.text-horizontal-line:before,
+.text-horizontal-line:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.text-horizontal-line:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.text-horizontal-line:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+::-webkit-scrollbar {
+    width: .4em;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(247, 165, 70, .65);
+    border-radius: 15px;
+}
+/* COMMON END */
+/* SEARCH START */
+.accordion{
+    background-color: transparent;
+}
+/* SEARCH END */
+/* NAVBAR START */
+input#navbarSearch:focus {
+    outline: 0 !important;
+    border-color: initial;
+    box-shadow: none;
+}
+
+.glass-navbar {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+/* NAVBAR END */
+/* MINI CART START */
+.mini-shopping-cart-item{
+    position: relative;
+    flex: 1 1 auto;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.mini-shopping-cart-item .items-scroll{
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 235px);
+}
+.item-subtotal{
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 24.95rem;
+    text-align: center;
+    z-index: 999;
+}
+/* MINI CART END */
+/* LOGIN START */
+.login-register-form-wrapper {
+    margin: auto;
+}
+
+.form-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-register-card {
+    margin: 0 auto;
+    overflow: hidden;
+    border: hidden;
+    border-radius: 20px;
+}
+
+/* LOGIN END */
+/* HOMEPAGE START */
+.store-card-home>.card {
+    transition: all ease .5s;
+}
+
+.store-card-home>.card:hover {
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* HOMEPAGE END */
+/* SINGLE PRODUCT PAGE START */
+.add-to-cart input {
+    max-width: 3em;
+}
+
+/* SINGLE PRODUCT PAGE END */
+/* CART START */
+.semi-light-bg {
+    background-color: #e6e6e6;
+}
+
+input.stdIdInput {
+    background-color: transparent;
+    color: #000000;
+    border-color: #6c757d;
+}
+
+input.stdIdInput:focus {
+    background-color: white;
+    color: #687077;
+}
+
+.shipping-Method-Btn {
+    padding: 0.49em;
+    border-radius: 5px;
+    margin-top: 8px;
+    background-color: #cdcdce;
+}
+
+.checkout-btn {
+    position: relative;
+    background-color: black;
+    color: #fff;
+}
+
+/* CART END */
+/* BILLING START */
+.saved-billing-address {
+    height: 16em;
+    overflow-y: auto;
+    font-size: .80em;
+}
+
+/* BILLING END */
+/* SHIPPING PROVIDER START */
+.shipping-provider-radio {
+    display: none;
+}
+
+.shipping-provider-radio+.card-body:hover {
+    cursor: pointer;
+}
+
+.shipping-provider-radio:checked+.card-body {
+    background-color: #f79421;
+    border-radius: 1rem;
+    color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* SHIPPING PROVIDER START */
+/* MY ACCOUNT START */
+.sidebar-list>a {
+    padding: .75em 1em;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.sidebar-list>a:hover {
+    color: #373738;
+    background-color: #cdcdce;
+    font-weight: 500;
+}
+
+.sidebar-list>a.active {
+    background-color: #cdcdce;
+    color: #373738;
+    font-weight: 500;
+    border: 1px solid #cdcdce;
+}
+
+/* MY ACCOUNT END */
+/* ADDRESSES START */
+.default-badge {
+    position: relative;
+    left: 0;
+    font-size: 0.75em;
+    text-align: left;
+    margin-bottom: 15px;
+    min-height: 15px;
+}
+.default-billing {
+    background-color: crimson;
+    border-radius: 15px;
+    padding: 0.5em;
+    margin-bottom: 2px;
+    color: #fff;
+    box-shadow: 0 2px 15px 0px rgb(255 0 0 / 30%);
+}
+.default-shipping {
+    background-color: steelblue;
+    border-radius: 15px;
+    padding: 0.5em;
+    margin-bottom: 2px;
+    color: #fff;
+    box-shadow: 0 2px 15px 0px rgb(70 130 180 / 30%);
+}
+.saved-address-and-orders {
+    height: 30em;
+    overflow-y: auto;
+    font-size: .80em;
+}
+
+
+/* ADDRESSES END */
+/* FOOTER START */
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-services-img {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* FOOTER END */
+/* RESPONSIVE START */
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .store-welcome-message {
+        width: 100%;
+    }
+
+    .login-register-card {
+        width: 100%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    }
+
+    .login-register-form-wrapper {
+        margin: 50px auto;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .store-welcome-message {
+        width: 50%;
+    }
+
+    .login-register-card {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        width: 800px;
+    }
+}
+
+/* RESPONSIVE END */

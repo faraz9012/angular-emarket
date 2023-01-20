@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoriesService } from 'src/app/categories.service';
 import { GlobalService } from 'src/app/global.service';
 
 @Component({
@@ -7,6 +8,9 @@ import { GlobalService } from 'src/app/global.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  constructor (public siteInfo:GlobalService ){}
+  constructor (
+    public siteInfo:GlobalService,
+    public category:CategoriesService
+     ){}
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut  lavbore et dolore magna aliqua.";
 }

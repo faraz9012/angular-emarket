@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { scheduled } from 'rxjs';
+import { CategoriesService } from 'src/app/categories.service';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +10,25 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  category = inject(CategoriesService);
+
+
+  constructor(
+    private router: Router) { }
+  limit = 3;
+  loadMoreButton = true
+
+  get limitedCategories() {
+    return this.category.categories.slice(0, this.limit)
+  }
+
+  onLoadMore() {
+    this.limit = Infinity;
+    this.loadMoreButton = false
+  }
+
+  getStores(slug: any) {
+    localStorage.setItem('store', JSON.stringify(slug))
+    return this.router.navigate(["/store", slug.categoryName])
+  }
 }

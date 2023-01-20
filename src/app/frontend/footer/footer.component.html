@@ -64,9 +64,7 @@
                 <div class="col-sm-12 col-md-2">
                     <h6>Categories</h6>
                     <ul class="footer-links">
-                        <li class="py-1"><a href="#">Category 1</a></li>
-                        <li class="py-1"><a href="#">Category 2</a></li>
-                        <li class="py-1"><a href="#">Category 3</a></li>
+                        <li class="py-1" *ngFor="let category of category.categories"><a href="#">{{category.categoryName}}</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-2">

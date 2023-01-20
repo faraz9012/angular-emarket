@@ -43,108 +43,19 @@
 <section class="bg-white my-5">
     <div class="container">
         <div class="row mx-lg-5">
-            <div class="col-sm-12 col-lg-4 my-2">
-                <a href="#" class="store-card-home">
+            <div class="col-sm-12 col-lg-4 my-2" *ngFor="let category of limitedCategories">
+                <a (click)="getStores(category)" class="store-card-home">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Campus Rec-Sport Clubs Invoices</h5>
-                            <p class="card-text">Aenean consectetur odio in condimentum tristique. Nam hendrerit
-                                urnaex.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-4 my-2">
-                <a href="#" class="store-card-home">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Campus Rec-Sport Clubs Invoices</h5>
-                            <p class="card-text">Aenean consectetur odio in condimentum tristique. Nam hendrerit
-                                urnaex.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-4 my-2">
-                <a href="#" class="store-card-home">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Campus Rec-Sport Clubs Invoices</h5>
-                            <p class="card-text">Aenean consectetur odio in condimentum tristique. Nam hendrerit
-                                urnaex.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-4 my-2">
-                <a href="#" class="store-card-home">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Campus Rec-Sport Clubs Invoices</h5>
-                            <p class="card-text">Aenean consectetur odio in condimentum tristique. Nam hendrerit
-                                urnaex.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-4 my-2">
-                <a href="#" class="store-card-home">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Campus Rec-Sport Clubs Invoices</h5>
-                            <p class="card-text">Aenean consectetur odio in condimentum tristique. Nam hendrerit
-                                urnaex.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-4 my-2">
-                <a href="#" class="store-card-home">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Campus Rec-Sport Clubs Invoices</h5>
-                            <p class="card-text">Aenean consectetur odio in condimentum tristique. Nam hendrerit
-                                urnaex.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-4 my-2">
-                <a href="#" class="store-card-home">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Campus Rec-Sport Clubs Invoices</h5>
-                            <p class="card-text">Aenean consectetur odio in condimentum tristique. Nam hendrerit
-                                urnaex.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-4 my-2">
-                <a href="#" class="store-card-home">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Campus Rec-Sport Clubs Invoices</h5>
-                            <p class="card-text">Aenean consectetur odio in condimentum tristique. Nam hendrerit
-                                urnaex.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-4 my-2">
-                <a href="#" class="store-card-home">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Campus Rec-Sport Clubs Invoices</h5>
-                            <p class="card-text">Aenean consectetur odio in condimentum tristique. Nam hendrerit
-                                urnaex.</p>
+                            <h5 class="card-title">{{category.categoryName}}</h5>
+                            <p class="card-text">{{category.categoryDescription}}</p>
                         </div>
                     </div>
                 </a>
             </div>
         </div>
-        <div class="text-center mt-3">
-            <button type="button" class="btn btn-primary px-3">Load More</button>
+        <div class="text-center mt-3" *ngIf="category.categories.length >3">
+            <button type="button" class="btn btn-primary px-3" (click)="onLoadMore()" *ngIf="loadMoreButton">Load More</button>
         </div>
     </div>
 </section>

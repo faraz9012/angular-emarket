@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { CategoriesService } from 'src/app/categories.service';
 import { GlobalService } from 'src/app/global.service';
 import { ProductsService } from 'src/app/products.service';
 
@@ -10,7 +11,8 @@ import { ProductsService } from 'src/app/products.service';
 export class HeaderComponent implements OnInit{
   constructor (
     public siteInfo:GlobalService,
-    public cartItems:ProductsService 
+    public cartItems:ProductsService,
+    public categoryItems:CategoriesService
     ){}
     ngOnInit(){
     }

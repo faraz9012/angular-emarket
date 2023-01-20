@@ -1,0 +1,59 @@
+<section>
+    <!-- Page Title Start -->
+    <div class="dark-bg pb-5 text-white">
+        <div class="container">
+            <div class="row d-flex justify-content-between pt-2 pb-3">
+                <div class="col-md-6">
+                    <h3 class="fw-normal">{{title}}</h3>
+                </div>
+                <div class="col-md-6 text-lg-end">
+                    <a class="text-muted" routerLink="/">Home</a>&nbsp;<i
+                        class="fas fa-chevron-right text-muted"></i>&nbsp;
+                    <a>{{title}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Title End -->
+    <!-- Page Body Start -->
+    <div class="page-body">
+        <div class="container">
+            <div class="card border-0 rounded-4">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-3" *ngFor="let subCategory of subCategories">
+                            <div class="card">
+                                <img src="{{subCategory.subCategoryImage}}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{subCategory.subCategoryName}}</h5>
+                                  <p class="card-text">{{subCategory.subCategoryDescription}}</p>
+                                  <a href="#" class="btn btn-primary rounded px-5">Details</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <!-- Pagination Start -->
+                    <nav class="d-flex justify-content-center mt-5">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    <!-- Pagination Start -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Body End -->
+</section>

@@ -21,6 +21,6 @@
     --bs-pagination-color:#f79421;
 }
 .active>.page-link, .page-link.active{
-    --bs-pagination-active-bg:#f79421; ;
+    --bs-pagination-active-bg:#f79421;
     --bs-pagination-active-border-color:#f79421; 
 }

@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { scheduled } from 'rxjs';
 import { CategoriesService } from 'src/app/categories.service';
 
 @Component({
@@ -11,10 +10,8 @@ import { CategoriesService } from 'src/app/categories.service';
 export class HomeComponent {
 
   category = inject(CategoriesService);
-
-
-  constructor(
-    private router: Router) { }
+  router =inject(Router);
+  
   limit = 3;
   loadMoreButton = true
 

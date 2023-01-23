@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import {RouterModule} from '@angular/router';
+
 import { HomeComponent } from './home/home.component';
 import { StoresComponent } from './stores/stores.component';
+import { SingleProductPageComponent } from './single-product-page/single-product-page.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    StoresComponent
+    StoresComponent,
+    SingleProductPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     HomeComponent

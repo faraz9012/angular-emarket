@@ -2,6 +2,7 @@
 a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .dark-bg {
@@ -138,7 +139,14 @@ input#navbarSearch:focus {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical
 }
-
+/* STORES START */
+.category-description{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical
+}
+/* STORES START */
 /* HOMEPAGE END */
 /* SINGLE PRODUCT PAGE START */
 .add-to-cart input {

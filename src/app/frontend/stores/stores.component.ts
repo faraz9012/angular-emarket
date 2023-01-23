@@ -1,5 +1,6 @@
-import { Component,  OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component,  inject,  OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-stores',
@@ -10,18 +11,24 @@ export class StoresComponent implements OnInit {
   title: string = '';
   stores: any = '';
   subCategories : any =[];
+  router =inject(Router);
+  siteInfo =inject(GlobalService);
+
 
   constructor(private route: ActivatedRoute) {
     route.params.subscribe((v: any) => {
-      console.log('slug value', v.slug);
       this.title = v.slug;
     });
 
+  this.siteInfo.storeName = this.title;
+    
   }
   ngOnInit(){
     this.stores = localStorage.getItem('store');
     this.subCategories = JSON.parse(this.stores).subCategories;
-    // console.log(JSON.parse(this.stores).subCategories);
-    console.log(this.subCategories);
+  }
+  getProduct(slug: any ) {
+    localStorage.setItem('product', JSON.stringify(slug));
+    return this.router.navigate(["/product", slug.subCategoryName])
   }
 }

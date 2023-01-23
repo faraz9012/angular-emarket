@@ -31,13 +31,13 @@
                         <a class="nav-link" routerLink="/">Home</a>
                     </li>
                     <li class="nav-item px-lg-2 px-lg-4 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Store
                         </a>
                         <ul class="dropdown-menu">
                             <li *ngFor="let category of categoryItems.categories">
-                                <a class="dropdown-item" href="#">{{category.categoryName}}</a>
+                                <a class="dropdown-item" (click)="getStores(category)">{{category.categoryName}}</a>
                             </li>                           
                         </ul>
                     </li>

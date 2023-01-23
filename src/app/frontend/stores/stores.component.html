@@ -26,8 +26,8 @@
                                 <img src="{{subCategory.subCategoryImage}}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">{{subCategory.subCategoryName}}</h5>
-                                  <p class="card-text">{{subCategory.subCategoryDescription}}</p>
-                                  <a href="#" class="btn btn-primary rounded px-5">Details</a>
+                                  <p class="card-text category-description">{{subCategory.subCategoryDescription}}</p>
+                                  <a class="btn btn-primary rounded px-5" (click)="getProduct(subCategory)">Details</a>
                                 </div>
                               </div>
                         </div>

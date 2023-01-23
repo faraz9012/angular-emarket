@@ -11,11 +11,10 @@ export class HomeComponent {
 
   category = inject(CategoriesService);
   router =inject(Router);
-  
   limit = 3;
   loadMoreButton = true
 
-  get limitedCategories() {
+  get limitedStores() {
     return this.category.categories.slice(0, this.limit)
   }
 

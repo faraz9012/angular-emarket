@@ -21,9 +21,7 @@ export class StoresComponent implements OnInit {
   paginatedItems : any =[];
   currentPage =1;
   pageList: any =[];
-  pre=true;
   selectedIndex?: number;
-
   constructor(private route: ActivatedRoute) {
     route.params.subscribe((v: any) => {
       this.title = v.slug;
@@ -39,23 +37,17 @@ export class StoresComponent implements OnInit {
     this.subCategories = JSON.parse(this.stores).subCategories;
     this.paginatedItems = this.subCategories.slice(0, 8)
     this.pageList = new Array(Math.ceil(this.subCategories.length/this.paginatedItems.length));
-    // if(this.currentPage ===1){
-    //   this.pre =false;
-    // }
-    // else{
-    //   this.pre =true;
 
-    // }
-
-
+    this.selectPageNumber(0);
   }
   getProduct(slug: any ) {
     localStorage.setItem('product', JSON.stringify(slug));
     return this.router.navigate(["/product", slug.subCategoryName])
   }
+
   selectPageNumber(pageNumber: number) {
     this.skip = pageNumber*this.limit;
     this.paginatedItems = this.subCategories.slice(this.skip, this.skip+this.limit)
-    this.selectedIndex = pageNumber;
+    this.selectedIndex = pageNumber;    
   }
 }

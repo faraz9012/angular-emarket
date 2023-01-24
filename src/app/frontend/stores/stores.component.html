@@ -41,7 +41,10 @@
                             </a>
                           </li>
                           <li class="page-item" *ngFor="let page of pageList;let i=index;">
-                            <a class="page-link" (click)="selectPageNumber(i)">{{i+1}}</a>
+                            <a class="page-link" 
+                            (click)="selectPageNumber(i)"
+                            [class.active]="selectedIndex === i"
+                            >{{i+1}}</a>
                           </li>
                           <li class="page-item" (click)="selectPageNumber(skip/limit + 1)">
                             <a class="page-link"aria-label="Next">

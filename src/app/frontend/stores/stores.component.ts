@@ -22,7 +22,8 @@ export class StoresComponent implements OnInit {
   currentPage =1;
   pageList: any =[];
   pre=true;
-  
+  selectedIndex?: number;
+
   constructor(private route: ActivatedRoute) {
     route.params.subscribe((v: any) => {
       this.title = v.slug;
@@ -55,5 +56,6 @@ export class StoresComponent implements OnInit {
   selectPageNumber(pageNumber: number) {
     this.skip = pageNumber*this.limit;
     this.paginatedItems = this.subCategories.slice(this.skip, this.skip+this.limit)
+    this.selectedIndex = pageNumber;
   }
 }

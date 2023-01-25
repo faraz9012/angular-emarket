@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { StoresComponent } from './stores/stores.component';
 import { SingleProductPageComponent } from './single-product-page/single-product-page.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -12,7 +13,8 @@ import { SingleProductPageComponent } from './single-product-page/single-product
   declarations: [
     HomeComponent,
     StoresComponent,
-    SingleProductPageComponent
+    SingleProductPageComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,

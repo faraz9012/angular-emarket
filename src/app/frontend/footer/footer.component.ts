@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoriesService } from 'src/app/categories.service';
 import { GlobalService } from 'src/app/global.service';
 
@@ -8,9 +9,13 @@ import { GlobalService } from 'src/app/global.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  constructor (
-    public siteInfo:GlobalService,
-    public category:CategoriesService
-     ){}
+  router =inject(Router);
+  siteInfo =inject(GlobalService);
+  category =inject(CategoriesService);
+
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut  lavbore et dolore magna aliqua.";
+  getStores(slug: any) {
+    localStorage.setItem('store', JSON.stringify(slug))
+    return this.router.navigate(["/store", slug.categoryName])
+  }
 }

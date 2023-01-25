@@ -21,7 +21,7 @@
             <div class="card border-0 rounded-4">
                 <div class="card-body">
                     <div class="row g-3">
-                        <div class="col-md-3" *ngFor="let subCategory of paginatedItems">
+                        <div class="col-md-3" *ngFor="let subCategory of pageListItems">
                             <div class="card">
                                 <img src="{{subCategory.subCategoryImage}}" class="card-img-top" alt="...">
                                 <div class="card-body">
@@ -33,26 +33,12 @@
                         </div>
                     </div>
                     <!-- Pagination Start -->
-                    <nav class="d-flex justify-content-center mt-5" *ngIf="subCategories.length > limit">
-                        <ul class="pagination">
-                          <li  class="page-item" (click)="selectPageNumber(skip/limit - 1)" *ngIf="(skip/limit) > 0">
-                            <a class="page-link" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                            </a>
-                          </li>
-                          <li class="page-item" *ngFor="let page of pageList;let i=index;">
-                            <a class="page-link" 
-                            (click)="selectPageNumber(i)"
-                            [class.active]="selectedIndex === i"
-                            >{{i+1}}</a>
-                          </li>
-                          <li class="page-item" (click)="selectPageNumber(skip/limit + 1)">
-                            <a class="page-link"aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
+                    <frontend-pagination *ngIf="subCategories.length"
+                        [skip]="0"
+                        [limit]="8"
+                        [dataSource]="subCategories"
+                        (onLimitDisplayItems)="setPaginatedDataLimit($event)"
+                    ></frontend-pagination>
                     <!-- Pagination Start -->
                 </div>
             </div>

@@ -19,7 +19,7 @@
     <!-- Navbar Start -->
     <nav class="navbar shadow navbar-expand-lg py-3 glass-navbar">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="{{siteInfo.logo}}" class="img-fluid" width="150"/></a>
+            <a class="navbar-brand" routerLink="/"><img src="{{siteInfo.logo}}" class="img-fluid" width="150"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -31,17 +31,14 @@
                         <a class="nav-link" routerLink="/">Home</a>
                     </li>
                     <li class="nav-item px-lg-2 px-lg-4 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Store
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li *ngFor="let category of categoryItems.categories">
+                                <a class="dropdown-item" (click)="getStores(category)">{{category.categoryName}}</a>
+                            </li>                           
                         </ul>
                     </li>
                     <li class="nav-item px-lg-2 px-lg-4 dropdown">

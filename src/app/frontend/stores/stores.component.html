@@ -1,0 +1,48 @@
+<section>
+    <!-- Page Title Start -->
+    <div class="dark-bg pb-5 text-white">
+        <div class="container">
+            <div class="row d-flex justify-content-between pt-2 pb-3">
+                <div class="col-md-6">
+                    <h3 class="fw-normal">{{title}}</h3>
+                </div>
+                <div class="col-md-6 text-lg-end">
+                    <a class="text-muted" routerLink="/">Home</a>&nbsp;<i
+                        class="fas fa-chevron-right text-muted"></i>&nbsp;
+                    <a>{{title}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Title End -->
+    <!-- Page Body Start -->
+    <div class="page-body">
+        <div class="container">
+            <div class="card border-0 rounded-4">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-3" *ngFor="let subCategory of pageListItems">
+                            <div class="card">
+                                <img src="{{subCategory.subCategoryImage}}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{subCategory.subCategoryName}}</h5>
+                                  <p class="card-text category-description">{{subCategory.subCategoryDescription}}</p>
+                                  <a class="btn btn-primary rounded px-5" (click)="getProduct(subCategory)">Details</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <!-- Pagination Start -->
+                    <frontend-pagination *ngIf="subCategories.length"
+                        [skip]="0"
+                        [limit]="8"
+                        [dataSource]="subCategories"
+                        (onLimitDisplayItems)="setPaginatedDataLimit($event)"
+                    ></frontend-pagination>
+                    <!-- Pagination Start -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Body End -->
+</section>

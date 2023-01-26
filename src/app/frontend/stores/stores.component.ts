@@ -1,6 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CategoriesService } from 'src/app/categories.service';
 import { GlobalService } from 'src/app/global.service';
 
 @Component({
@@ -10,6 +9,7 @@ import { GlobalService } from 'src/app/global.service';
 })
 export class StoresComponent implements OnInit {
 
+  cd = inject(ChangeDetectorRef);
   router = inject(Router);
   siteInfo = inject(GlobalService);
 
@@ -30,13 +30,10 @@ export class StoresComponent implements OnInit {
     this.stores = localStorage.getItem('store');
     this.subCategories = JSON.parse(this.stores).subCategories;
   }
-  ngAfterViewInit(){
 
-  }
   setPaginatedDataLimit(event:any) {
     this.pageListItems = event;
-    console.log("Value set on store component", event);
-
+    this.cd.detectChanges();
   }
 
   getProduct(slug: any) {

@@ -2,6 +2,7 @@
 a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .dark-bg {
@@ -55,11 +56,13 @@ a {
     background-color: rgba(247, 165, 70, .65);
     border-radius: 15px;
 }
+
 /* COMMON END */
 /* SEARCH START */
-.accordion{
+.accordion {
     background-color: transparent;
 }
+
 /* SEARCH END */
 /* NAVBAR START */
 input#navbarSearch:focus {
@@ -75,20 +78,22 @@ input#navbarSearch:focus {
 
 /* NAVBAR END */
 /* MINI CART START */
-.mini-shopping-cart-item{
+.mini-shopping-cart-item {
     position: relative;
     flex: 1 1 auto;
     overflow: hidden;
     width: 100%;
     height: 100%;
 }
-.mini-shopping-cart-item .items-scroll{
+
+.mini-shopping-cart-item .items-scroll {
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
     height: calc(100vh - 235px);
 }
-.item-subtotal{
+
+.item-subtotal {
     padding: 1rem;
     position: fixed;
     bottom: 0;
@@ -97,6 +102,7 @@ input#navbarSearch:focus {
     text-align: center;
     z-index: 999;
 }
+
 /* MINI CART END */
 /* LOGIN START */
 .login-register-form-wrapper {
@@ -127,6 +133,20 @@ input#navbarSearch:focus {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.store-card-home>.card>.card-body>.card-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical
+}
+/* STORES START */
+.category-description{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical
+}
+/* STORES START */
 /* HOMEPAGE END */
 /* SINGLE PRODUCT PAGE START */
 .add-to-cart input {
@@ -219,6 +239,7 @@ input.stdIdInput:focus {
     margin-bottom: 15px;
     min-height: 15px;
 }
+
 .default-billing {
     background-color: crimson;
     border-radius: 15px;
@@ -227,6 +248,7 @@ input.stdIdInput:focus {
     color: #fff;
     box-shadow: 0 2px 15px 0px rgb(255 0 0 / 30%);
 }
+
 .default-shipping {
     background-color: steelblue;
     border-radius: 15px;
@@ -235,6 +257,7 @@ input.stdIdInput:focus {
     color: #fff;
     box-shadow: 0 2px 15px 0px rgb(70 130 180 / 30%);
 }
+
 .saved-address-and-orders {
     height: 30em;
     overflow-y: auto;

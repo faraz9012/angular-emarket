@@ -1,6 +1,7 @@
 
 :root{
     --bs-link-hover-color: #f79421;
+    --bs-pagination-color:#f79421;
 }
 .btn-primary{
     --bs-btn-bg: #f79421; 
@@ -12,4 +13,14 @@
 .btn:hover{
         background-color: var(--bs-btn-hover-bg);
         border-color: var(--bs-btn-hover-border-color);
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    border-color: var(--bs-btn-hover-border-color);
+}
+.page-link{
+    --bs-pagination-color:#f79421;
+}
+.active>.page-link, .page-link.active{
+    --bs-pagination-active-bg:#f79421;
+    --bs-pagination-active-border-color:#f79421; 
 }
